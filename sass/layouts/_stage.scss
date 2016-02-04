@@ -1,0 +1,26 @@
+.stage {
+  background: #fafafa;
+  height: 4em;
+  position: relative;
+  align-items: center;
+  text-align: center;
+  border-radius: 2px;
+  
+  @include respond-to(med) {
+    height: 12em;
+  }
+}
+.stage__item {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  @include transform(translate(-50%, -50%));
+}
+.stage__foot {
+  border: 1px solid #fafafa;
+  color: #999;
+  padding: 1rem;
+  font-size: $type-sz-6;
+  word-wrap: break-word;
+}

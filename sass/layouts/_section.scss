@@ -1,0 +1,37 @@
+.section {
+  padding: 2em 1em;
+
+  @include respond-to(med) {
+    padding-top: 5em;
+    padding-bottom: 5em;
+  }
+}
+
+.section-head {
+  background: $brand;
+  padding: 1.5em 1em;
+}
+.section--brand {
+  background: $brand;
+}
+.section--lrg-top {
+  background: $brand;
+
+  @include respond-to(med) {
+    padding-top: 7em;
+    padding-bottom: 2em;
+  }
+}
+.section-title {
+  font-weight: 300;
+  font-size: 1.25em;
+  text-align: center;
+
+  @include respond-to(med) {
+    font-size: 2em;
+    text-align: left;
+  }
+}
+.section-title > strong {
+  text-decoration: underline;
+}

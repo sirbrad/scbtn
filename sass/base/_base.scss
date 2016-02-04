@@ -1,0 +1,123 @@
+// Base
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html {
+  color: $base-text-color;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+}
+
+body {
+  background: $background-color;
+}
+
+::selection,
+::-moz-selection {
+  background-color: $brand;
+  text-shadow: none;
+}
+
+// Links
+
+a {
+  color:  $brand-secondary;
+  text-decoration: underline;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color:  $brand-secondary;
+    text-decoration: none;
+  }
+}
+
+// Images
+img {
+  max-width: 100%;
+  vertical-align: top;
+}
+
+/* Typography
+ ========================================================================== */
+
+.hx {
+  margin: 0 0 1em;
+  line-height: 1.2;
+  font-weight: bold;
+}
+
+h1 {
+  @extend .hx;
+  margin: 0;
+  font-size: $type-sz-1;
+}
+
+h2 {
+  @extend .hx;
+  margin: 1em 0 0.75em;
+  font-size: $type-sz-2;
+}
+
+h3 {
+  @extend .hx;
+  font-size: $type-sz-3;
+}
+
+h4 {
+  @extend .hx;
+  font-size: $type-sz-4;
+}
+h5 {
+  @extend .hx;
+  font-size: $type-sz-5;
+}
+
+h6 {
+  @extend .hx;
+  font-size: $type-sz-6;
+  color: #777;
+}
+
+small {
+  font-size: 75%;
+}
+
+// Block-level margins
+
+p, blockquote, ul, ol, dl, menu {
+  margin: 0 0 1em;
+}
+
+pre {
+  margin: 0;
+}
+
+/* Lists
+ ========================================================================== */
+
+ul,
+ol {
+  padding-left: 1.5em;
+}
+
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+  padding: 0;
+  margin: 0 0 .75em;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin-left: 30px;
+}

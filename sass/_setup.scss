@@ -1,0 +1,72 @@
+// Site set-up
+
+// Site Wide Colours
+$brand: #fffc01;
+$brand-secondary: #9165aa;
+$brand-tertiary: #04a588;
+$background-color: #fff;
+$base-text-color: #262626;
+
+$base-text-align: left; // switch for rtl
+$base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$base-font-size: 16px;
+$base-line-height: 1.4;
+
+$site-max-width: 720px;
+$site-gutter: 2em;
+
+$type-sz-1: 2.625rem;
+$type-sz-2: 1.75rem;
+$type-sz-3: 1.3125rem;
+$type-sz-4: 1rem;
+$type-sz-5: .875rem;
+$type-sz-6: .75rem;
+
+$link-color: $brand;
+
+@mixin respond-to($content) {
+  @if $content == med {
+    @media only screen and (min-width: 40em) { @content; }
+  } @else {
+    @media only screen and (min-width: $content) { @content; }
+  }
+}
+
+@mixin transition($content) {
+    -moz-transition:    $content;
+    -o-transition:      $content;
+    -webkit-transition: $content;
+    -ms-transition:     $content;
+  transition:           $content;
+}
+
+@mixin transform($content) {
+    -moz-transform:    $content;
+    -o-transform:      $content;
+    -webkit-transform: $content;
+    -ms-transform:     $content;
+  transform:           $content;
+}
+
+@mixin keyframes($animation-name) {
+    @-moz-keyframes $animation-name {
+      @content;
+    }
+    @-o-keyframes $animation-name {
+      @content;
+    }
+    @-webkit-keyframes $animation-name {
+      @content;
+    }
+  @keyframes $animation-name {
+    @content;
+  }
+}
+
+@mixin animation($str) {
+    -moz-animation: #{$str};
+    -o-animation: #{$str};
+    -webkit-animation: #{$str};
+    -ms-animation: #{$str};
+  animation: #{$str};
+}

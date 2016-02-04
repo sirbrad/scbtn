@@ -38,4 +38,4 @@ gulp.task('watch', function() {
 });
  
 // The default task (called when we run `gulp` from cli)
-gulp.task('default', ['connect']);
+gulp.task('default', ['connect', 'watch', 'sass', 'js']);
