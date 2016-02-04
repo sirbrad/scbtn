@@ -15,6 +15,7 @@ html {
 
 body {
   background: $background-color;
+  border-bottom: 5px solid $brand-secondary;
 }
 
 ::selection,

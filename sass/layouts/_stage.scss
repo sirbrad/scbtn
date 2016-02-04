@@ -1,5 +1,5 @@
 .stage {
-  background: #fafafa;
+  background: $brand-grey;
   height: 4em;
   position: relative;
   align-items: center;
@@ -18,7 +18,7 @@
   @include transform(translate(-50%, -50%));
 }
 .stage__foot {
-  border: 1px solid #fafafa;
+  border: 1px solid $brand-grey;
   color: #999;
   padding: 1rem;
   font-size: $type-sz-6;

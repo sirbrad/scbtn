@@ -1,0 +1,10 @@
+.site-foot {
+  border-top: 1px solid $brand-grey;
+  color: $brand-tertiary;
+  font-size: $type-sz-5;
+  padding: 2rem 0;
+  text-align: center;
+}
+.site-foot > p {
+  margin: 0;
+}
