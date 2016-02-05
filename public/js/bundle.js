@@ -98,13 +98,13 @@ var React = require('react');
 var cx = require('classnames');
 
 var BtnStage = React.createClass({displayName: "BtnStage",
-  iframeUrl: function(){
-    var src = "http://192.168.0.5:8888/src/button.html?";
+  iframeUrl: function(hi){
+    console.log(hi)
+    var src = "http://scbtn.com.s3-website-us-east-1.amazonaws.com/src/button.html";
         src += "?username=" + escape(this.props.username);
         src += "?invert=" + this.props.isInverted;
         src += "?large=" + this.props.btnLarge,
         height = (this.props.btnLarge) ? 30 : 20;
-
 
     return '\n<iframe src="' + src + ' frameborder="0" scrolling="no" height="' + height + 'px"></iframe>'
   },
@@ -133,7 +133,7 @@ var BtnStage = React.createClass({displayName: "BtnStage",
           React.createElement("pre", null, 
             "<-- copy and paste code below -->", 
             React.createElement("code", null, 
-               this.iframeUrl() 
+               this.iframeUrl(this) 
             )
           )
         )
