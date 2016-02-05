@@ -3,13 +3,14 @@ var cx = require('classnames');
 
 var BtnStage = React.createClass({
   iframeUrl: function(){
-    var src = "http://scbtns.com/btn";
-    src += "?username=" + escape(this.props.username);
-    src += "?token=" + this.props.token;
-    src += "?invert=" + this.props.isInverted;
-    src += "?large=" + this.props.btnLarge;
+    var src = "http://192.168.0.5:8888/src/button.html?";
+        src += "?username=" + escape(this.props.username);
+        src += "?invert=" + this.props.isInverted;
+        src += "?large=" + this.props.btnLarge,
+        height = (this.props.btnLarge) ? 30 : 20;
 
-    return '\n<iframe src="' + src + '></iframe>'
+
+    return '\n<iframe src="' + src + ' frameborder="0" scrolling="no" height="' + height + 'px"></iframe>'
   },
   render: function(){
     // defaultProps doesn't seem to be working :'(
