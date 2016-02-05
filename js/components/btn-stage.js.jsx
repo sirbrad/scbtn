@@ -15,7 +15,7 @@ var BtnStage = React.createClass({
     // defaultProps doesn't seem to be working :'(
     var username = this.props.username || "ghost";
     var classes = cx({
-      "sc-btn": true,
+      "sc-wrapper": true,
       "sc-btn--large": this.props.btnLarge,
       "sc-btn--invert": this.props.isInverted
     });
@@ -25,7 +25,7 @@ var BtnStage = React.createClass({
         <div className="stage">
           <div className="stage__item">
             <span className={classes}>
-              <a>
+              <a className="sc-btn">
                 <i></i>
                 {username}
               </a>
