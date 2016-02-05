@@ -55,7 +55,7 @@ var BtnOptions = React.createClass({displayName: "BtnOptions",
         React.createElement("h3", null, "Button Options"), 
 
         /* Username input */
-        React.createElement("div", {className: "form__item push-top"}, 
+        React.createElement("div", {className: "form__item"}, 
           React.createElement("label", {htmlFor: "username"}, "Snapchat username"), 
           React.createElement("input", {type: "text", id: "username", onChange: this.props.updateUsername}), 
           React.createElement("small", {className: "form__instruction"}, 

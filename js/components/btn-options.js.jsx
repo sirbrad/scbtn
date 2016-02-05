@@ -8,7 +8,7 @@ var BtnOptions = React.createClass({
         <h3>Button Options</h3>
 
         {/* Username input */}
-        <div className="form__item push-top">
+        <div className="form__item">
           <label htmlFor="username">Snapchat username</label>
           <input type="text" id="username" onChange={this.props.updateUsername} />
           <small className="form__instruction">
