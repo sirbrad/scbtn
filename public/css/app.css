@@ -591,7 +591,12 @@ dd {
   line-height: 1;
   text-align: left;
   vertical-align: top;
-  white-space: nowrap; }
+  white-space: nowrap;
+  -moz-transition: height 0.125s ease;
+  -o-transition: height 0.125s ease;
+  -webkit-transition: height 0.125s ease;
+  -ms-transition: height 0.125s ease;
+  transition: height 0.125s ease; }
 
 .sc-btn {
   -webkit-appearance: none;
@@ -637,8 +642,8 @@ dd {
   transition: all 0.125s ease; }
 
 .sc-btn--large {
-  font-size: 15px;
-  height: 28px; }
+  height: 28px;
+  font-size: 15px; }
 
 .sc-btn--large .sc-btn {
   padding: 5px 8px 4px 31px; }

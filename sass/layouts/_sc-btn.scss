@@ -12,6 +12,7 @@
   text-align: left;
   vertical-align: top;
   white-space: nowrap;
+  @include transition(height .125s ease);
 }
 .sc-btn {
   -webkit-appearance: none;
@@ -52,8 +53,8 @@
 }
 
 .sc-btn--large {
-  font-size: 15px;
   height: 28px;
+  font-size: 15px;
 }
 .sc-btn--large .sc-btn {
   padding: 5px 8px 4px 31px;
