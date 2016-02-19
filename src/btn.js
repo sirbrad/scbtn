@@ -30,5 +30,3 @@ if (isInverted) {
 
 // Update username text
 txt.innerHTML = username 
-
-
