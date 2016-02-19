@@ -1,4 +1,5 @@
 var React = require('react');
+var ReactDOM = require('react-dom');
 var BtnOptions = require('./components/btn-options.js.jsx')
 var BtnStage = require('./components/btn-stage.js.jsx')
  
@@ -41,4 +42,4 @@ var BtnGenerator = React.createClass({
   }
 });
 
-React.render(<BtnGenerator />, document.getElementById("js-stage"));
+ReactDOM.render(<BtnGenerator />, document.getElementById("js-stage"));

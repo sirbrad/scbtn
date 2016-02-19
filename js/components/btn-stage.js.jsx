@@ -1,4 +1,5 @@
 var React = require('react');
+var ReactDOM = require('react-dom');
 var cx = require('classnames');
 
 var BtnStage = React.createClass({
@@ -7,42 +8,19 @@ var BtnStage = React.createClass({
       btnWidth: 0
     }
   },
-  // componentWillReceiveProps: function(){
-  //   console.log('componentWillReceiveProps')
-  //   console.log('props: ' +this.refs.button.getDOMNode().clientWidth)
-  //   // this.setState({ btnWidth: this.refs.button.getDOMNode().getBoundingClientRect().width })
-  // },
   componentDidMount: function(){
-    console.log('did mount')
-    console.log(this.refs.button.getDOMNode().clientWidth)
-    this.setState({btnWidth: this.refs.button.getDOMNode().clientWidth})
-
-    // console.log("state = " +this.state.btnWidth)
+    this.setState({
+      btnWidth: ReactDOM.findDOMNode(this.refs.button).getBoundingClientRect().width
+    });
   },
   componentDidUpdate: function(){
-    console.log('componentDidUpdate')
-
-    console.log(this.refs.button.getDOMNode().clientWidth)
-
-    this.setState({btnWidth: this.refs.button.getDOMNode().clientWidth})
-
-    // if (this.state.btnWidth !== this.refs.button.getDOMNode().clientWidth) {
-    //   window.setTimeout(function(){
-    //     this.setState({btnWidth: this.refs.button.getDOMNode().clientWidth})
-    //   }.bind(this), 200)
-    // }
-  },
-  shouldComponentUpdate: function(nextProps, nextState){
-
-    console.log("new state:"+nextState.btnWidth)
-    console.log("old state: "+this.state.btnWidth)
-    return nextState.btnWidth != this.state.btnWidth;
-
-    // if (nextState.btnWidth === this.state.btnWidth) {
-    //   return true;
-    // } else {
-    //   return false;
-    // }
+    var newWidth = ReactDOM.findDOMNode(this.refs.button).getBoundingClientRect().width;
+    
+    if (this.state.btnWidth && this.state.btnWidth !== newWidth) {
+      this.setState({
+        btnWidth: newWidth,
+      })
+    }
   },
   iframeUrl: function(){
     var src = "http://scbtn.com.s3-website-us-east-1.amazonaws.com/src/button.html";
@@ -51,11 +29,7 @@ var BtnStage = React.createClass({
         src += "?large=" + this.props.btnLarge,
         height = (this.props.btnLarge) ? 30 : 20;
 
-    // if (!!this.refs.button) {
-    //   this.refs.button.getDOMNode().clientWidth;
-    // }
-
-    return '\n<iframe src="' + src + ' frameborder="0" scrolling="no" height="' + height + 'px" width="' + this.state.btnWidth + '"></iframe>'
+    return '\n<iframe src="' + src + ' frameborder="0" scrolling="no" height="' + height + 'px" width="' + this.state.btnWidth +'px"></iframe>'
   },
   render: function(){
     // defaultProps doesn't seem to be working :'(
@@ -65,8 +39,6 @@ var BtnStage = React.createClass({
       "sc-btn--large": this.props.btnLarge,
       "sc-btn--invert": this.props.isInverted
     });
-
-    console.log(this.props.username)
 
     return (
       <div className="grid__cell cell--2of3">
