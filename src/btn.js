@@ -18,7 +18,7 @@ var username    = params['username'].toLowerCase(),
      txt        = document.getElementById('sc-txt');
 
 // Update btn url
-btn.href = "http://snapchat.com/add/" + username;
+btn.href = "redirect.html?snapchat_url=https://snapchat.com/add/" + username;
 
 
 if (isLarge) {
