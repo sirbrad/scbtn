@@ -19,6 +19,7 @@ var BtnStage = React.createClass({
         el = ReactDOM.findDOMNode(this.refs.button),
         newWidth = el.getBoundingClientRect().width;
 
+    //TODO: Remove jquery, move this to a transitionEnd func
     $(el).one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(e){
       _this.updateStateWidth(newWidth);
     })
