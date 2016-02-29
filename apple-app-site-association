@@ -1,0 +1,15 @@
+{
+    "applinks": {
+        "apps": [],
+        "details": [
+            {
+                "appID": "3MY7A92V5W.com.toyopagroup.picaboo",
+                "paths": [ "/discover/*" ]
+            },
+      {
+                "appID": "RRXKNUJYAH.com.snapchat.snapchat",
+                "paths": [ "/discover/*" ]
+            }
+        ]
+    }
+}
