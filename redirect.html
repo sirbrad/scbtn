@@ -8,17 +8,13 @@
     <!-- <link rel="shortcut icon" href="/assets/images/favicon.ico" /> -->
   </head>
   <body>
-    <a href="https://snapchat.com/add/rihanna" target="_blank">clickme</a>
+    <a id="foo" href="https://snapchat.com/add/rihanna">clickme</a>
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
     <script>
-      // function openDeepLink(deepLink, marketLink) {
-      //   setTimeout(function() {
-      //     window.location = window.location.search.split('=')[1];
-      //   }, 5000);
-      // }
-
-      // document.addEventListener("DOMContentLoaded", function() {
-      //   openDeepLink();
-      // });
+      document.getElementById('foo').click();
+      // $(function(){
+      //   $('#foo').click();
+      // })
     </script>
   </body>
 </html>
