@@ -9,7 +9,15 @@
   </head>
   <body>
     <script>
-      window.location = window.location.search.split('=')[1];
+      function openDeepLink(deepLink, marketLink) {
+        setTimeout(function() {
+          window.location = window.location.search.split('=')[1];
+        }, 250);
+      }
+
+      document.addEventListener("DOMContentLoaded", function() {
+        openDeepLink();
+      });
     </script>
   </body>
 </html>
