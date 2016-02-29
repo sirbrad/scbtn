@@ -12,7 +12,7 @@
   text-align: left;
   vertical-align: top;
   white-space: nowrap;
-  // @include transition(height .125s ease);
+  @include transition(height .125s ease);
 }
 .sc-btn {
   -webkit-appearance: none;
@@ -27,7 +27,7 @@
   padding: 3px 4px 3px 20px;
   margin: 0;
   text-decoration: none;
-  // @include transition(all .125s ease);
+  @include transition(all .125s ease);
 }
 
 .sc-btn:hover,
@@ -49,7 +49,7 @@
   top: 3px;
   height: 12px;
   width: 13px;
-  // @include transition(all .125s ease);
+  @include transition(all .125s ease);
 }
 
 .sc-btn--large {

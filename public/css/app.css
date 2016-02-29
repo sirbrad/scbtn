@@ -591,7 +591,12 @@ dd {
   line-height: 1;
   text-align: left;
   vertical-align: top;
-  white-space: nowrap; }
+  white-space: nowrap;
+  -moz-transition: height 0.125s ease;
+  -o-transition: height 0.125s ease;
+  -webkit-transition: height 0.125s ease;
+  -ms-transition: height 0.125s ease;
+  transition: height 0.125s ease; }
 
 .sc-btn {
   -webkit-appearance: none;
@@ -605,7 +610,12 @@ dd {
   line-height: 1;
   padding: 3px 4px 3px 20px;
   margin: 0;
-  text-decoration: none; }
+  text-decoration: none;
+  -moz-transition: all 0.125s ease;
+  -o-transition: all 0.125s ease;
+  -webkit-transition: all 0.125s ease;
+  -ms-transition: all 0.125s ease;
+  transition: all 0.125s ease; }
 
 .sc-btn:hover,
 .sc-btn:focus {
@@ -624,7 +634,12 @@ dd {
   left: 4px;
   top: 3px;
   height: 12px;
-  width: 13px; }
+  width: 13px;
+  -moz-transition: all 0.125s ease;
+  -o-transition: all 0.125s ease;
+  -webkit-transition: all 0.125s ease;
+  -ms-transition: all 0.125s ease;
+  transition: all 0.125s ease; }
 
 .sc-btn--large {
   height: 28px;

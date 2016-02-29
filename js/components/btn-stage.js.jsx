@@ -1,6 +1,7 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 var cx = require('classnames');
+var $ = require('jquery');
 
 var BtnStage = React.createClass({
   getInitialState: function(){
@@ -14,13 +15,15 @@ var BtnStage = React.createClass({
     });
   },
   componentDidUpdate: function(){
-    var newWidth = ReactDOM.findDOMNode(this.refs.button).getBoundingClientRect().width;
-    
-    if (this.state.btnWidth && this.state.btnWidth !== newWidth) {
-      this.setState({
-        btnWidth: newWidth,
-      })
-    }
+    var _this = this,
+        el = ReactDOM.findDOMNode(this.refs.button),
+        newWidth = el.getBoundingClientRect().width;
+
+    $(el).one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(e){
+      _this.updateStateWidth(newWidth);
+    })
+
+    this.updateStateWidth(newWidth);
   },
   iframeUrl: function(){
     var src = "http://scbtn.com.s3-website-us-east-1.amazonaws.com/src/button.html";
@@ -30,6 +33,13 @@ var BtnStage = React.createClass({
         height = (this.props.btnLarge) ? 30 : 20;
 
     return '\n<iframe src="' + src + ' frameborder="0" scrolling="no" height="' + height + 'px" width="' + this.state.btnWidth +'px"></iframe>'
+  },
+  updateStateWidth: function(newWidth){
+    if (this.state.btnWidth && this.state.btnWidth !== newWidth) {
+      this.setState({
+        btnWidth: newWidth
+      })
+    }
   },
   render: function(){
     // defaultProps doesn't seem to be working :'(
