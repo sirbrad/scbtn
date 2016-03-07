@@ -1,5 +1,5 @@
 #sc-btn {
-  display: block;
+  display: inline-block;
   max-width: 100%;
   height: 20px;
   font: 600 11px/14px 'Helvetica Neue',Helvetica,Arial,sans-serif;
@@ -27,14 +27,12 @@
   margin: 0;
   text-decoration: none;
 }
-
 #sc-btn a:hover,
 #sc-btn a:focus {
   border: 1px solid rgba(0, 0, 0, .1);
   color: #262626;
   text-decoration: none;
 }
-
 #sc-btn a:active {
   border: 1px solid rgba(0, 0, 0, .1);
   background: #f1ee00;
@@ -50,7 +48,6 @@
   height: 12px;
   width: 13px;
 }
-
 #sc-btn.lrg {
   height: 28px;
   font-size: 15px;
@@ -64,7 +61,6 @@
   top: 5px;
   left: 8px;
 }
-
 #sc-btn.invert a {
   background: #262626;
   color: #fffc01;

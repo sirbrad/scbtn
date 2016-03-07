@@ -587,7 +587,7 @@ dd {
   text-align: center; }
 
 #sc-btn {
-  display: block;
+  display: inline-block;
   max-width: 100%;
   height: 20px;
   font: 600 11px/14px 'Helvetica Neue',Helvetica,Arial,sans-serif;

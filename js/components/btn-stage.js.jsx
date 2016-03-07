@@ -29,10 +29,11 @@ var BtnStage = React.createClass({
   buildAnchor: function(){
     var username = escape(this.props.username),
         url = "href='https://snapchat.com/add/"+username+"'",
-        clss = "",
         height = (this.props.btnLarge) ? 28 : 20,
+        title = (username) ? " title='Add " + username + " on Snapchat'" : "",
+        clss = "",
         style = "",
-        title = (username) ? " title='Add " + username + " on Snapchat'" : "";
+        scriptTag = "<script src='/js/scbtn.js'></script>"
 
     clss += (!!this.props.btnLarge) ? "lrg" : "";
     clss += (!!this.props.isInverted) ? "invert" : "";
@@ -52,7 +53,7 @@ var BtnStage = React.createClass({
     style = 'height:' + height + 'px;';
     style += 'width:' + this.state.btnWidth.toFixed(3) + 'px;';
 
-    return '\n<div id="sc-btn"'+ clss +' style="'+style+'"><a '+url+''+title+'><i></i>' +username+'</a></div>'
+    return '\n'+scriptTag +'\n<div id="sc-btn"'+ clss +' style="'+style+'"><a '+url+''+title+'><i></i>' +username+'</a></div>'
 
   },
   updateStateWidth: function(newWidth){
