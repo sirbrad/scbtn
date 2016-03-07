@@ -123,14 +123,34 @@ var BtnStage = React.createClass({displayName: "BtnStage",
 
     this.updateStateWidth(newWidth);
   },
-  iframeUrl: function(){
-    var src = "http://scbtn.com.s3-website-us-east-1.amazonaws.com/src/button.html";
-        src += "?username=" + escape(this.props.username);
-        src += "?invert=" + this.props.isInverted;
-        src += "?large=" + this.props.btnLarge,
-        height = (this.props.btnLarge) ? 30 : 20;
+  buildAnchor: function(){
+    var username = escape(this.props.username),
+        url = "href='https://snapchat.com/add/"+username+"'",
+        clss = "",
+        height = (this.props.btnLarge) ? 28 : 20,
+        style = "",
+        title = (username) ? " title='Add " + username + " on Snapchat'" : "";
 
-    return '\n<iframe src="' + src + ' frameborder="0" scrolling="no" height="' + height + 'px" width="' + this.state.btnWidth +'px"></iframe>'
+    clss += (!!this.props.btnLarge) ? "lrg" : "";
+    clss += (!!this.props.isInverted) ? "invert" : "";
+
+    switch (clss) {
+      case "lrg":
+        clss = ' class="lrg"';
+        break;
+      case "invert":
+        clss = ' class="invert"';
+        break;
+      case "lrginvert":
+        clss = ' class="lrg invert"';
+        break;
+    };
+
+    style = 'height:' + height + 'px;';
+    style += 'width:' + this.state.btnWidth.toFixed(3) + 'px;';
+
+    return '\n<div id="sc-btn"'+ clss +' style="'+style+'"><a '+url+''+title+'><i></i>' +username+'</a></div>'
+
   },
   updateStateWidth: function(newWidth){
     if (this.state.btnWidth && this.state.btnWidth !== newWidth) {
@@ -143,16 +163,15 @@ var BtnStage = React.createClass({displayName: "BtnStage",
     // defaultProps doesn't seem to be working :'(
     var username = this.props.username || "ghost";
     var classes = cx({
-      "sc-wrapper": true,
-      "sc-btn--large": this.props.btnLarge,
-      "sc-btn--invert": this.props.isInverted
+      "lrg": this.props.btnLarge,
+      "invert": this.props.isInverted
     });
 
     return (
       React.createElement("div", {className: "grid__cell cell--2of3"}, 
         React.createElement("div", {className: "stage"}, 
           React.createElement("div", {className: "stage__item"}, 
-            React.createElement("span", {className: classes, ref: "button"}, 
+            React.createElement("span", {id: "sc-btn", className: classes, ref: "button"}, 
               React.createElement("a", {className: "sc-btn"}, 
                 React.createElement("i", null), 
                 username
@@ -164,7 +183,7 @@ var BtnStage = React.createClass({displayName: "BtnStage",
           React.createElement("pre", null, 
             "<-- copy and paste code below -->", 
             React.createElement("code", null, 
-               this.iframeUrl() 
+               this.buildAnchor() 
             )
           )
         )
