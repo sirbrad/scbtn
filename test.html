@@ -1,47 +1,54 @@
-*, *:before, *:after {
-  box-sizing: border-box;
-}
-body {
-  margin: 0;
-  padding: 0;
-  font-weight: bold;
-  font-size: 11px;
-  font-family:  'Helvetica Neue', Helvetica, Arial, sans-serif;
-  line-height: 1;
-}
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>An unofficial Snapchat button</title>
+    <meta name="author" content="sirbrad" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
 
-.sc-wrapper {
-  height: 20px;
+#sc-btn {
+  display: block;
   max-width: 100%;
+  font: 600 11px/14px 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
   text-align: left;
   vertical-align: top;
   white-space: nowrap;
 }
-.sc-btn {
+#sc-btn a {
   -webkit-appearance: none;
-  display: inline-block;
+  display: block;
   position: relative;
   background: #fffc01;
   border: 1px solid rgba(0, 0, 0, .03);
-  border-radius: 3px;
+  border-radius: 4px;
+  box-sizing: border-box;
   color: #262626;
   height: 100%;
+  width: 100%;
   line-height: 1;
   padding: 3px 4px 3px 20px;
   margin: 0;
   text-decoration: none;
 }
-.sc-btn:hover,
-.sc-btn:focus {
+
+#sc-btn a:hover,
+#sc-btn a:focus {
   border: 1px solid rgba(0, 0, 0, .1);
   color: #262626;
+  text-decoration: none;
 }
 
-.sc-btn:active {
+#sc-btn a:active {
   border: 1px solid rgba(0, 0, 0, .1);
   background: #f1ee00;
+  text-decoration: none;
 }
-.sc-btn i {
+#sc-btn i {
   background: center center no-repeat;
   background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAmCAMAAACBKikvAAABgFBMVEX///////8hISAnJyY+PT37+/spKSkwMDAvLi6UkZE5OTmhoaEfHx9DQkLPzc0iIiGem5udmZkzMjJ6d3c8Ojq2tra+vr7g39+8vLw2NTTV09MdHR1UUlE6ODimpqaoqKiFgoJZWVlubm2OjY2IhYWWlpaPj4/BwcEiISHw7u4WFRV+fn6in5/k4uJSUlLx8fE6OjnIxsbNy8utra1KR0daWlrv7++2tLTb2dk5ODdTUE/39vYjIyN5dnZ7e3u3t7f9/f0ODw/e3t7Lysrq6uqTkJDS0tLf3t2al5eEhIRhYWElJSV7eHhMTEzd3d2uq6vj4+NNS0plYmKEgYFfXV3u7e2ysrIyMTG5ubnJyck0MzKSkpJOTEvOzMvBv74oKCgbGxvGxsZPTUyzsLCjo6NWVlX6+vpRTk7FxcWRkZHi4ODDw8ODf3/CwsLT0dGAfHxdWllUU1Owra3Hx8daWFd8fHykpKQrKyu4uLiBgYGDg4NqZ2eNjIwcHBz6+vl4dXVJezZjAAAAAXRSTlMAQObYZgAAAYZJREFUeAGlztOCLGEMBOBKTxtje23btnVs2+ajr/lj+d0mqQoYD0vDtRm39nrpC5zmptrz5i5t8xdz0c+QqvTV06F6XyUkym4l6JhXqT8QqtIb6IQGvQoCw8YnYjw2h8FraydOext4JSHiBEvAM7qJ022A55KAC14/CfRfZfHc1YE+4vxTwDMTxEmYOOGG3VwW87USp9V3bfC7/eOoteve794BQXXfQPZ/uuvo0Y+Pxkhq7M5THHh225ebJqHpnO+lhmNe2xESiNhvwVgMk0B4EawhjwS8IbC8IAkEPTAKURKKFnDCqNJCQi3KKI4Z1y2SsPRxHJrUiyRVvD+JPZ0z1SE6Rah6phOA0/h3fYpONbX+oNHBSHkNnammfARPAr0T7+hU/onngTzQlJ8159IklZ4zZgtN2DM4T1LzdTiSbH7/YSW7ukQnLK1mV75EepI4on2t+5aMVaiq/9hnqloRi+d//tLAc5Q1jXZpa4qDUywvpKwNog0rtbCM08U7MoqS6YiDsQUM0DQklWUUgAAAAABJRU5ErkJggg==');
   background-size: contain;
@@ -52,33 +59,46 @@ body {
   width: 13px;
 }
 
-.sc-btn--large {
+#sc-btn.lrg {
   font-size: 15px;
-  height: 28px;
 }
-.sc-btn--large .sc-btn {
+#sc-btn.lrg a {
   padding: 5px 8px 4px 31px;
 }
-.sc-btn--large .sc-btn i {
+#sc-btn.lrg i {
   width: 17px;
   height: 16px;
   top: 5px;
   left: 8px;
 }
 
-.sc-btn--invert .sc-btn {
+#sc-btn.invert a {
   background: #262626;
   color: #fffc01;
 }
-.sc-btn--invert .sc-btn:hover,
-.sc-btn--invert .sc-btn:focus {
-  color: #cdcb00;
+#sc-btn.invert a:hover,
+#sc-btn.invert a:focus {
+  color: #EBE833;
 }
-.sc-btn--invert .sc-btn:active {
+#sc-btn.invert a:active {
   background: #000;
   color: #fffc01;
   border-color: transparent;
 }
-.sc-btn--invert .sc-btn i {
+#sc-btn.invert i {
   background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAmCAQAAAAc/RGWAAAAY0lEQVR4Ae3WAxLAUAxF0ex/0bUVvaS+f1icGlQGD372fk6QzwyK2UBd14H6Xgz+4A+W+yBUMoiT7Dk0dclVNnUBaI4HXeWA+fch3BwMqwNDCwef9rbxh/8fXvwHy5NkAvFRAYMlPENR5Q34AAAAAElFTkSuQmCC');
 }
+
+    </style>
+  </head>
+  <body>
+  <script src="/js/scbtn.js"></script>
+   <div id="sc-btn" style="height:20px;width:55.750px;"><a href="https://snapchat.com/add/ghost" class="sc-btn"><i></i>ghost</a></div>
+   <br>
+   <div id="sc-btn" class=" lrg" style="height:28px;width:81.563px;"><a href="https://snapchat.com/add/ghost"><i></i>ghost</a></div>
+   <br>
+   <div id="sc-btn" class=" invert" style="height:20px;width:55.750px;"><a href="https://snapchat.com/add/ghost"><i></i>ghost</a></div>
+   <br>
+   <div id="sc-btn" class=" lrg invert" style="height:28px;width:81.563px;"><a href="https://snapchat.com/add/ghost"><i></i>ghost</a></div>
+  </body>
+</html>

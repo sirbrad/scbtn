@@ -17,6 +17,11 @@
   left: 50%;
   @include transform(translate(-50%, -50%));
 }
+.stage__item #sc-btn,
+.stage__item #sc-btn a {
+  display: inline-block;
+  width: auto;
+}
 .stage__foot {
   border: 1px solid $brand-grey;
   color: #999;
