@@ -53,7 +53,7 @@ var BtnStage = React.createClass({
     style = 'height:' + height + 'px;';
     style += 'width:' + this.state.btnWidth.toFixed(3) + 'px;';
 
-    return '\n'+scriptTag +'\n<div id="sc-btn"'+ clss +' style="'+style+'"><a '+url+''+title+'><i></i>' +username+'</a></div>'
+    return '\n'+scriptTag +'\n<span id="sc-btn"'+ clss +' style="'+style+'"><a '+url+''+title+'><i></i>' +username+'</a></span>'
 
   },
   updateStateWidth: function(newWidth){
@@ -85,7 +85,7 @@ var BtnStage = React.createClass({
         </div>
         <footer className="stage__foot">
           <pre>
-            &#x003C;-- copy and paste code below --&#x003E;
+            &#x003C;-- copy code below and paste on your website --&#x003E;
             <code>
               { this.buildAnchor() }
             </code>

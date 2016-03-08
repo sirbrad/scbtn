@@ -479,12 +479,15 @@ dd {
   .cell--1of2 {
     width: 50%; } }
 
+.push-top-double {
+  margin-top: 3em; }
+
 .section {
   padding: 2em 1em; }
   @media only screen and (min-width: 40em) {
     .section {
       padding-top: 5em;
-      padding-bottom: 5em; } }
+      padding-bottom: 1em; } }
 
 .section-head {
   background: #fffc01;
@@ -544,6 +547,14 @@ dd {
 .form__instruction {
   margin-top: .5em;
   display: block; }
+
+table tr {
+  border-top: 1px solid #eee; }
+
+table td {
+  padding: 1em 0; }
+  table td:first-child {
+    min-width: 140px; }
 
 .stage {
   background: #fafafa;

@@ -150,7 +150,7 @@ var BtnStage = React.createClass({displayName: "BtnStage",
     style = 'height:' + height + 'px;';
     style += 'width:' + this.state.btnWidth.toFixed(3) + 'px;';
 
-    return '\n'+scriptTag +'\n<div id="sc-btn"'+ clss +' style="'+style+'"><a '+url+''+title+'><i></i>' +username+'</a></div>'
+    return '\n'+scriptTag +'\n<span id="sc-btn"'+ clss +' style="'+style+'"><a '+url+''+title+'><i></i>' +username+'</a></span>'
 
   },
   updateStateWidth: function(newWidth){
@@ -182,7 +182,7 @@ var BtnStage = React.createClass({displayName: "BtnStage",
         ), 
         React.createElement("footer", {className: "stage__foot"}, 
           React.createElement("pre", null, 
-            "<-- copy and paste code below -->", 
+            "<-- copy code below and paste on your website -->", 
             React.createElement("code", null, 
                this.buildAnchor() 
             )
