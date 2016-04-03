@@ -124,11 +124,11 @@ var BtnStage = React.createClass({displayName: "BtnStage",
     this.updateStateWidth(newWidth);
   },
   iframeUrl: function(){
-    var src = "http://scbtn.com.s3-website-us-east-1.amazonaws.com/src/button.html";
+    var src = "http://scbutton.com/src/button.html";
         src += "?username=" + escape(this.props.username);
         src += "?invert=" + this.props.isInverted;
         src += "?large=" + this.props.btnLarge,
-        height = (this.props.btnLarge) ? 30 : 20;
+        height = (this.props.btnLarge) ? 28 : 20;
 
     return '\n<iframe src="' + src + ' frameborder="0" scrolling="no" height="' + height + 'px" width="' + this.state.btnWidth +'px"></iframe>'
   },
