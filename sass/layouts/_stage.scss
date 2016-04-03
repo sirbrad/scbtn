@@ -22,5 +22,8 @@
   color: #999;
   padding: 1rem;
   font-size: $type-sz-6;
-  word-wrap: break-word;
+  overflow: scroll;
+}
+.stage__foot pre {
+  overflow: visible;
 }

@@ -572,7 +572,10 @@ dd {
   color: #999;
   padding: 1rem;
   font-size: 0.75rem;
-  word-wrap: break-word; }
+  overflow: scroll; }
+
+.stage__foot pre {
+  overflow: visible; }
 
 .site-foot {
   border-top: 1px solid #fafafa;

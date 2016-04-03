@@ -19,6 +19,7 @@ var username    = params['username'].toLowerCase(),
 
 // Update btn url
 btn.href = "http://snapchat.com/add/" + username;
+btn.setAttribute('title', 'Add '+username+' on Snapchat')
 
 
 if (isLarge) {
