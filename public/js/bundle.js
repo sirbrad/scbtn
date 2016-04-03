@@ -116,22 +116,21 @@ var BtnStage = React.createClass({displayName: "BtnStage",
         el = ReactDOM.findDOMNode(this.refs.button),
         newWidth = el.getBoundingClientRect().width;
 
-    //TODO: Remove jquery move this to a transitionEnd func
+    //TODO: Remove jquery, move this to a transitionEnd func
     $(el).one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(e){
       _this.updateStateWidth(newWidth);
-      console.log(newWidth)
     })
 
     this.updateStateWidth(newWidth);
   },
   iframeUrl: function(){
-    var src = "https://scbutton.com/src/button.html";
+    var src = "http://scbtn.com.s3-website-us-east-1.amazonaws.com/src/button.html";
         src += "?username=" + escape(this.props.username);
         src += "?invert=" + this.props.isInverted;
         src += "?large=" + this.props.btnLarge,
         height = (this.props.btnLarge) ? 30 : 20;
 
-    return '\n<iframe src="' + src + '" frameborder="0" scrolling="no" height="' + height + 'px" width="' + this.state.btnWidth +'px"></iframe>'
+    return '\n<iframe src="' + src + ' frameborder="0" scrolling="no" height="' + height + 'px" width="' + this.state.btnWidth +'px"></iframe>'
   },
   updateStateWidth: function(newWidth){
     if (this.state.btnWidth && this.state.btnWidth !== newWidth) {
@@ -144,15 +143,16 @@ var BtnStage = React.createClass({displayName: "BtnStage",
     // defaultProps doesn't seem to be working :'(
     var username = this.props.username || "ghost";
     var classes = cx({
-      "lrg": this.props.btnLarge,
-      "invert": this.props.isInverted
+      "sc-wrapper": true,
+      "sc-btn--large": this.props.btnLarge,
+      "sc-btn--invert": this.props.isInverted
     });
 
     return (
       React.createElement("div", {className: "grid__cell cell--2of3"}, 
         React.createElement("div", {className: "stage"}, 
           React.createElement("div", {className: "stage__item"}, 
-            React.createElement("span", {id: "sc-btn", className: classes, ref: "button"}, 
+            React.createElement("span", {className: classes, ref: "button"}, 
               React.createElement("a", {className: "sc-btn"}, 
                 React.createElement("i", null), 
                 username
@@ -162,9 +162,9 @@ var BtnStage = React.createClass({displayName: "BtnStage",
         ), 
         React.createElement("footer", {className: "stage__foot"}, 
           React.createElement("pre", null, 
-            "<-- copy code below and paste on your website -->", 
+            "<-- copy and paste code below -->", 
             React.createElement("code", null, 
-               this.buildAnchor() 
+               this.iframeUrl() 
             )
           )
         )
