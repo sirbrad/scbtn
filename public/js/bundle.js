@@ -119,39 +119,19 @@ var BtnStage = React.createClass({displayName: "BtnStage",
     //TODO: Remove jquery move this to a transitionEnd func
     $(el).one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(e){
       _this.updateStateWidth(newWidth);
+      console.log(newWidth)
     })
 
     this.updateStateWidth(newWidth);
   },
-  buildAnchor: function(){
-    var username = escape(this.props.username),
-        url = "href='https://snapchat.com/add/"+username+"'",
-        height = (this.props.btnLarge) ? 28 : 20,
-        title = (username) ? " title='Add " + username + " on Snapchat'" : "",
-        clss = "",
-        style = "",
-        scriptTag = "<script src='/js/scbtn.js'></script>"
+  iframeUrl: function(){
+    var src = "https://scbutton.com/src/button.html";
+        src += "?username=" + escape(this.props.username);
+        src += "?invert=" + this.props.isInverted;
+        src += "?large=" + this.props.btnLarge,
+        height = (this.props.btnLarge) ? 30 : 20;
 
-    clss += (!!this.props.btnLarge) ? "lrg" : "";
-    clss += (!!this.props.isInverted) ? "invert" : "";
-
-    switch (clss) {
-      case "lrg":
-        clss = ' class="lrg"';
-        break;
-      case "invert":
-        clss = ' class="invert"';
-        break;
-      case "lrginvert":
-        clss = ' class="lrg invert"';
-        break;
-    };
-
-    style = 'height:' + height + 'px;';
-    style += 'width:' + this.state.btnWidth.toFixed(3) + 'px;';
-
-    return '\n'+scriptTag +'\n<span id="sc-btn"'+ clss +' style="'+style+'"><a '+url+''+title+'><i></i>' +username+'</a></span>'
-
+    return '\n<iframe src="' + src + '" frameborder="0" scrolling="no" height="' + height + 'px" width="' + this.state.btnWidth +'px"></iframe>'
   },
   updateStateWidth: function(newWidth){
     if (this.state.btnWidth && this.state.btnWidth !== newWidth) {
