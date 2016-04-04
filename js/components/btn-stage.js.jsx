@@ -20,9 +20,10 @@ var BtnStage = React.createClass({
         newWidth = el.getBoundingClientRect().width;
 
     //TODO: Remove jquery, move this to a transitionEnd func
-    $(el).one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(e){
-      _this.updateStateWidth(newWidth);
-    })
+    // $(el).one('transitionend', function(e){
+    //   alert(newWidth)
+    //   _this.updateStateWidth(newWidth);
+    // })
 
     this.updateStateWidth(newWidth);
   },
@@ -33,10 +34,13 @@ var BtnStage = React.createClass({
         src += "?large=" + this.props.btnLarge,
         height = (this.props.btnLarge) ? 28 : 20;
 
-    return '\n<iframe src="' + src + ' frameborder="0" scrolling="no" height="' + height + 'px" width="' + this.state.btnWidth +'px"></iframe>'
+    return '\n<iframe src="' + src + '" frameborder="0" scrolling="no" height="' + height + 'px" width="' + this.state.btnWidth +'px"></iframe>'
   },
   updateStateWidth: function(newWidth){
+    console.log('newWidth: ' + newWidth)
+    console.log('oldWidth: ' + this.state.btnWidth)
     if (this.state.btnWidth && this.state.btnWidth !== newWidth) {
+      console.log('widths do not equal')
       this.setState({
         btnWidth: newWidth
       })

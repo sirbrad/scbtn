@@ -11,8 +11,8 @@ var params = (function () {
 }());
 
 var username    = params['username'].toLowerCase(),
-     isLarge    = (params['large'].indexOf('true') >= 0) ? true : false,
-     isInverted = (params['invert'].indexOf('true') >= 0) ? true : false,
+     isLarge    = (!!params['large'] && params['large'].indexOf('true') >= 0) ? true : false,
+     isInverted = (!!params['invert'] && params['invert'].indexOf('true') >= 0) ? true : false,
      wrapper    = document.getElementById('sc-wrapper'),
      btn        = document.getElementById('sc-btn'),
      txt        = document.getElementById('sc-txt');
