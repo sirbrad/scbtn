@@ -554,7 +554,7 @@ table tr {
 table td {
   padding: 1em 0; }
   table td:first-child {
-    min-width: 140px; }
+    padding-right: 1em; }
 
 .stage {
   background: #fafafa;
