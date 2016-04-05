@@ -127,11 +127,11 @@ var BtnStage = React.createClass({displayName: "BtnStage",
   iframeUrl: function(){
     var src = "http://scbutton.com/src/button.html";
         src += "?username=" + escape(this.props.username);
-        src += "?invert=" + this.props.isInverted;
-        src += "?large=" + this.props.btnLarge,
+        src += "&invert=" + this.props.isInverted;
+        src += "&large=" + this.props.btnLarge,
         height = (this.props.btnLarge) ? 28 : 20;
 
-    return '\n<iframe src="' + src + ' frameborder="0" scrolling="no" height="' + height + 'px" width="' + this.state.btnWidth +'px"></iframe>'
+    return '\n<iframe src="' + src + '" frameborder="0" scrolling="no" height="' + height + 'px" width="' + this.state.btnWidth +'px"></iframe>'
   },
   updateStateWidth: function(newWidth){
     console.log('newWidth: ' + newWidth)
