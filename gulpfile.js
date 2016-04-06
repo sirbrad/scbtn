@@ -1,6 +1,5 @@
 var gulp = require('gulp');
 var browserify = require('browserify');
-var connect = require('gulp-connect');
 var reactify = require('reactify');
 var source = require('vinyl-source-stream');
 var sass = require('gulp-sass');
@@ -10,12 +9,6 @@ var paths = {
   app_js: ['./js/app.js.jsx'],
   js: ['js/*.js.jsx', 'js/**/*.js.jsx'],
 };
-
-gulp.task('connect', function(){
-  connect.server({
-    port: 8888
-  });
-});
 
 gulp.task('js', function() {
   browserify(paths.app_js)
@@ -38,4 +31,4 @@ gulp.task('watch', function() {
 });
  
 // The default task (called when we run `gulp` from cli)
-gulp.task('default', ['connect', 'watch', 'sass', 'js']);
+gulp.task('default', ['watch', 'sass', 'js']);
