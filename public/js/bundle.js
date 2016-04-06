@@ -119,7 +119,7 @@ var BtnStage = React.createClass({displayName: "BtnStage",
     this.updateStateWidth(newWidth);
   },
   iframeUrl: function(){
-    var src = "http://scbutton.com/src/button.html";
+    var src = "https://scbutton.com/src/button.html";
         src += "?username=" + escape(this.props.username);
         src += "&invert=" + this.props.isInverted;
         src += "&large=" + this.props.btnLarge,
