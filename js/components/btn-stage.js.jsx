@@ -1,7 +1,6 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 var cx = require('classnames');
-var $ = require('jquery');
 
 var BtnStage = React.createClass({
   getInitialState: function(){
