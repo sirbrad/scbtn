@@ -1,11 +1,6 @@
 # An unofficial Snapchat button.
 
-### Todo
-- [ ] 👻 favicon
-- [ ] Set iFrame width on keyup
-- [ ] Set up bucket with SSL
-- [ ] Buy domain
-- [ ] Gulp task to minify `/src` button assets
-- [ ] Gulp task to deploy
-- [ ] Is button url correct?
-- [ ] "Sowwi" no JS detected view.
+Embed a button to promote your snapchat account. Fits perfectly alongside other social web buttons.
+
+Based heavily on [@mdo](https://github.com/mdo)'s [ghbtns.com](https://github.com/mdo/github-buttons)!
+
