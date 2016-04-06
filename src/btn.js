@@ -19,7 +19,7 @@
        txt        = document.getElementById('sc-txt');
 
   // Update btn url
-  btn.href = "http://snapchat.com/add/" + username;
+  btn.href = "https://snapchat.com/add/" + username;
   btn.setAttribute('title', 'Add '+username+' on Snapchat')
 
 
