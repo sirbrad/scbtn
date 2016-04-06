@@ -1,0 +1,22 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>An unofficial Snapchat button</title>
+    <meta name="author" content="sirbrad" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" type="image/png" href="/favicon.png" />
+    <link rel="stylesheet" href="{{ "/public/css/app.css" | prepend: site.baseurl }}">
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+    <link rel="canonical" href=" { { site.url } }{ { page.url } }" />
+  </head>
+  <body>
+
+    {% include header.html %}
+    <main role="main" class="contain">
+      {{ content }}
+    </main>
+    {% include footer.html %}
+    <script src="{{ "/public/js/bundle.js" | prepend: site.baseurl }}"></script>
+  </body>
+</html>

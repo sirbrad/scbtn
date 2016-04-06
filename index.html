@@ -1,72 +1,44 @@
-<!doctype html>
-<html class="no-js" lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>An unofficial Snapchat button</title>
-    <meta name="author" content="sirbrad" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" type="image/png" href="/favicon.png" />
-    <link rel="stylesheet" href="/public/css/app.css"/>
-  </head>
-  <body>
-    <header role="banner" class="section section--brand section--lrg-top">
-      <div class="contain">
-        <h1 class="section-title">
-          An <strong>unofficial</strong> Snapchat button.
-        </h1>
-      </div>
-    </header>
-    <main role="main" class="contain">
-      <div id="js-stage" class="section"></div>
-      <div class="section">
-        <h3>Documentation</h3>
-        <h5>How to use</h5>
-        <p>
-          Use the generator above to create a button to promote your Snapchat 
-          account. Once you're happy with how it looks, copy and paste the 
-          generated code on to your website, in place where you would like 
-          the button to appear.
-        </p>
-        <h5 class="push-top-double">Appearance</h5>
-        <table>
-          <tbody>
-            <tr>
-              <td>default</td>
-              <td>
-                <div class="sc-wrapper"><a class="sc-btn"><i></i><span>ghost</span></a></div>
-              </td>
-            </tr>
-            <tr>
-              <td><code>&amp;invert=true</code></td>
-              <td>
-                <div class="sc-wrapper sc-btn--invert"><a class="sc-btn"><i></i><span>ghost</span></a></div>
-              </td>
-            </tr>
-            <tr>
-              <td><code>&amp;large=true</code></td>
-              <td>
-                <div class="sc-wrapper sc-btn--large"><a class="sc-btn"><i></i><span>ghost</span></a></div>
-              </td>
-            </tr>
-            <tr>
-              <td><code>&amp;invert=true&amp;large=true</code></td>
-              <td>
-                <div class="sc-wrapper sc-btn--invert sc-btn--large"><a class="sc-btn"><i></i><span>ghost</span></a></div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </main>
-    </main>
-    <footer role="contentinfo" class="site-foot contain">
-      <p>
-        Made in Essex.
-      </p>
-      <iframe src="http://scbutton.com/src/button.html?username=fewwy&invert=false&large=false" frameborder="0" scrolling="no" height="20px" width="59.609375px"></iframe>
-      <a href="https://twitter.com/bradleyfew" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false">Follow @bradleyfew</a>
-      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-    </footer>
-    <script src="/public/js/bundle.js"></script>
-  </body>
-</html>
+---
+layout: default
+---
+
+<div id="js-stage" class="section"></div>
+<div class="section">
+  <h3>Documentation</h3>
+  <h5>How to use</h5>
+  <p>
+    Use the generator above to create a button to promote your Snapchat 
+    account. Once you're happy with how it looks, copy and paste the 
+    generated code on to your website, in place where you would like 
+    the button to appear.
+  </p>
+  <h5 class="push-top-double">Appearance</h5>
+  <table>
+    <tbody>
+      <tr>
+        <td>default</td>
+        <td>
+          <div class="sc-wrapper"><a class="sc-btn"><i></i><span>ghost</span></a></div>
+        </td>
+      </tr>
+      <tr>
+        <td><code>&amp;invert=true</code></td>
+        <td>
+          <div class="sc-wrapper sc-btn--invert"><a class="sc-btn"><i></i><span>ghost</span></a></div>
+        </td>
+      </tr>
+      <tr>
+        <td><code>&amp;large=true</code></td>
+        <td>
+          <div class="sc-wrapper sc-btn--large"><a class="sc-btn"><i></i><span>ghost</span></a></div>
+        </td>
+      </tr>
+      <tr>
+        <td><code>&amp;invert=true&amp;large=true</code></td>
+        <td>
+          <div class="sc-wrapper sc-btn--invert sc-btn--large"><a class="sc-btn"><i></i><span>ghost</span></a></div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
