@@ -116,12 +116,6 @@ var BtnStage = React.createClass({displayName: "BtnStage",
         el = ReactDOM.findDOMNode(this.refs.button),
         newWidth = el.getBoundingClientRect().width;
 
-    //TODO: Remove jquery, move this to a transitionEnd func
-    // $(el).one('transitionend', function(e){
-    //   alert(newWidth)
-    //   _this.updateStateWidth(newWidth);
-    // })
-
     this.updateStateWidth(newWidth);
   },
   iframeUrl: function(){
@@ -134,10 +128,7 @@ var BtnStage = React.createClass({displayName: "BtnStage",
     return '\n<iframe src="' + src + '" frameborder="0" scrolling="no" height="' + height + 'px" width="' + this.state.btnWidth +'px"></iframe>'
   },
   updateStateWidth: function(newWidth){
-    console.log('newWidth: ' + newWidth)
-    console.log('oldWidth: ' + this.state.btnWidth)
     if (this.state.btnWidth && this.state.btnWidth !== newWidth) {
-      console.log('widths do not equal')
       this.setState({
         btnWidth: newWidth
       })
