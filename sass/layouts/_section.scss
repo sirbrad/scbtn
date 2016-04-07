@@ -14,6 +14,12 @@
 .section--brand {
   background: $brand;
 }
+.section--brand > .contain {
+  @include respond-to(med) {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+}
 .section--lrg-top {
   background: $brand;
 
