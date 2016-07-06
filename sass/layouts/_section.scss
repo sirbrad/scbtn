@@ -8,7 +8,6 @@
 }
 
 .section-head {
-  background: $brand;
   padding: 1.5em 1em;
 }
 .section--brand {
@@ -21,8 +20,6 @@
   }
 }
 .section--lrg-top {
-  background: $brand;
-
   @include respond-to(med) {
     padding-top: 7em;
     padding-bottom: 2em;

@@ -490,7 +490,6 @@ dd {
       padding-bottom: 1em; } }
 
 .section-head {
-  background: #fffc01;
   padding: 1.5em 1em; }
 
 .section--brand {
@@ -501,12 +500,10 @@ dd {
     padding-left: 1em;
     padding-right: 1em; } }
 
-.section--lrg-top {
-  background: #fffc01; }
-  @media only screen and (min-width: 40em) {
-    .section--lrg-top {
-      padding-top: 7em;
-      padding-bottom: 2em; } }
+@media only screen and (min-width: 40em) {
+  .section--lrg-top {
+    padding-top: 7em;
+    padding-bottom: 2em; } }
 
 .section-title {
   font-weight: 300;
